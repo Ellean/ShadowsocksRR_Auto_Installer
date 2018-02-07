@@ -325,18 +325,18 @@ download_files(){
     fi
     # Download ShadowsocksR file
     if ! wget --no-check-certificate -O shadowsocksr-3.2.1.tar.gz https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.1.tar.gz; then
-        echo -e "[${red}Error${plain}] Failed to download ShadowsocksR file!"
+        echo -e "[${red}Error${plain}] Failed to download ShadowsocksRR file!"
         exit 1
     fi
     # Download ShadowsocksR init script
     if check_sys packageManager yum; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/Ellean/ShadowsocksRR_Auto_Installer/master/ShadowsocksRR -O /etc/init.d/shadowsocks; then
-            echo -e "[${red}Error${plain}] Failed to download ShadowsocksR chkconfig file!"
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/Ellean/ShadowsocksRR_Auto_Installer/master/ShadowsocksRR-CentOS -O /etc/init.d/shadowsocks; then
+            echo -e "[${red}Error${plain}] Failed to download ShadowsocksRR chkconfig file!"
             exit 1
         fi
     elif check_sys packageManager apt; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/Ellean/ShadowsocksRR_Auto_Installer/master/ShadowsocksRR-debian -O /etc/init.d/shadowsocks; then
-            echo -e "[${red}Error${plain}] Failed to download ShadowsocksR chkconfig file!"
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/Ellean/ShadowsocksRR_Auto_Installer/master/ShadowsocksRR-Debian -O /etc/init.d/shadowsocks; then
+            echo -e "[${red}Error${plain}] Failed to download ShadowsocksRR chkconfig file!"
             exit 1
         fi
     fi
